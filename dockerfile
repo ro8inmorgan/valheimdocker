@@ -16,7 +16,7 @@ COPY valheim /etc/init.d/
 
 USER root
 RUN ["/usr/bin/apt-get","update"]
-RUN ["/usr/bin/apt-get","--assume-yes","install","cron","procps","daemon","nodejs","npm"]
+RUN ["/usr/bin/apt-get","--assume-yes","install","cron","procps","daemon","nodejs","npm","next"]
 RUN ["chmod","+x","/home/steam/start.sh"]
 RUN ["chown","steam:steam","/home/steam/start.sh"]
 RUN ["chmod","+x","/home/steam/start_valheim.sh"]
