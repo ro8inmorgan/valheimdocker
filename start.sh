@@ -9,7 +9,7 @@
 
 echo "server is now starting up, try connecting within a few minutes"
 cd /home/steam/valheimgui
-
+npm install
 npm run dev &
 
 /bin/bash
