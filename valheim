@@ -1,0 +1,36 @@
+#!/bin/bash
+# chkconfig: 2345 20 80
+# description: Description comes here....
+
+# Source function library.
+#. /etc/init.d/functions
+
+start() {
+  daemon /home/steam/start_valheim.sh &
+}
+
+stop() {
+   pkill --signal SIGINT "valheim"
+}
+
+case "$1" in 
+    start)
+       start
+       ;;
+    stop)
+       stop
+       ;;
+    restart)
+       stop
+	   sleep 30
+       start
+       ;;
+    status)
+       # code to check status of app comes here 
+       # example: status program_name
+       ;;
+    *)
+       echo "Usage: $0 {start|stop|status|restart}"
+esac
+
+exit 0 
