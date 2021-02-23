@@ -7,6 +7,20 @@ export default (req, res) => {
 
   const { spawn } = require('child_process');
 
+
+  await exec('export SERVER_NAME=\'' +  req.body.servername + '\'; export "WORLD_NAME=\'' +  req.body.worldname + '\'; export "PASSWORD=\'' +  req.body.password + '\';', (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+     
+    }
+    if (stderr) {
+      
+
+    }
+    return stdout;
+  })
+
+
   const child = spawn('/home/steam/start_valheim.sh');
 
   child.stdout.on('data', (data) => {
