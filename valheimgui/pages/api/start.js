@@ -2,7 +2,7 @@
 const { exec } = require("child_process");
 global.serveroutput;
 
-export default (req, res) => {
+export default async (req, res) => {
 
 
   const { spawn } = require('child_process');
